@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 1px solid red;
+}
+
+body {
+  background: #ebeae8;
+  height: 100vh;
+}
+main {
+  margin: 0 auto;
+  width: 65vw;
+}
+.container {
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  gap: 2em;
+}
+.slider {
+  width: 400%;
+  height: 100%;
+  display: flex;
+}
+
+img {
+  width: 25%;
+  height: 100%;
+  max-height: 40vw;
+  transition: 0.2s all linear;
+}
+
+.buttons {
+  gap: 0.5em;
+}
+.section {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.flex-center {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+.control-default {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+label {
+  display: flex;
+}
+/* .slider {
+  transform: translateX(-25%);
+} */
+.control-midified {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background: blue;
+  border-radius: 50%;
+  border: 10px solid #ebeae8;
+  cursor: pointer;
+}
+.control-midified::before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  background: red;
+  border-radius: 50%;
+  display: none;
+}
+.control-default:checked + .control-midified::before {
+  display: block;
+}
+.control-midified:hover {
+  background: white;
+}
+
+#b1:checked ~ .slider {
+  transform: translateX(0);
+}
+#b2:checked ~ .slider {
+  transform: translateX(-25%);
+}
+#b3:checked ~ .slider {
+  transform: translateX(-50%);
+}
+#b4:checked ~ .slider {
+  transform: translateX(-75%);
+}
+@media (width <= 600px) {
+  .section {
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+  }
+  img {
+    max-height: 40vh;
+  }
+  .meme-text {
+    align-self: start;
+  }
+}
