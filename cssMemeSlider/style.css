@@ -3,7 +3,10 @@
   padding: 0;
   outline: 1px solid red;
 }
-
+h3 {
+  opacity: 0;
+  display: none;
+}
 body {
   background: #ebeae8;
   height: 100vh;
@@ -59,16 +62,15 @@ img {
 label {
   display: flex;
 }
-/* .slider {
-  transform: translateX(-25%);
-} */
+
 .control-midified {
   display: block;
   width: 1em;
   height: 1em;
   background: blue;
+  border: 0.1em solid blue;
   border-radius: 50%;
-  /* border: 10px solid #ebeae8; */
+  transition: 0.2s all linear;
 }
 .wrapper-control {
   display: flex;
@@ -80,27 +82,33 @@ label {
   cursor: pointer;
   background: #ebeae8;
 }
-.control-midified::before {
-  content: "";
-  width: 1em;
-  height: 1em;
-  background: red;
-  border-radius: 50%;
-  display: none;
-}
 
 .wrapper-control:hover .control-midified {
   background: white;
+  border: 0.1em solid white;
+  transform: scale(1.2);
 }
-#b1:checked ~ .section #C1 {
-  background: #ebeae8;
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-#b2:checked ~ .section #C2 {
-  background: #ebeae8;
+/* SESLECROTS HELL */
+
+#b1:checked ~ .section .text1,
+#b2:checked ~ .section .text2,
+#b3:checked ~ .section .text3,
+#b4:checked ~ .section .text4 {
+  display: block;
+  opacity: 1;
+  animation: fadeOut 1s forwards;
 }
-#b3:checked ~ .section #C3 {
-  background: #ebeae8;
-}
+#b1:checked ~ .section #C1,
+#b2:checked ~ .section #C2,
+#b3:checked ~ .section #C3,
 #b4:checked ~ .section #C4 {
   background: #ebeae8;
 }
@@ -117,32 +125,21 @@ label {
   transform: translateX(-75%);
 }
 @media (width <= 600px) {
+  main {
+    width: 90vw;
+  }
   .section {
     flex-direction: column;
     align-items: center;
     gap: 2em;
   }
+  .pic {
+    max-height: 25vh;
+  }
   img {
-    max-height: 40vh;
+    /* object-fit: cover; */
   }
   .meme-text {
     align-self: start;
   }
 }
-
-/* test area  */
-
-/* .test-container {
-  margin: 0 auto;
-}
-label {
-  display: block;
-  width: 1em;
-  height: 1em;
-  background: red;
-  margin: 1em;
-}
-
-#r2:checked ~ .pic1 {
-  display: none;
-} */
