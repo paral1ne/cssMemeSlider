@@ -16,12 +16,13 @@ main {
   margin: 0 auto;
   width: 80%;
   max-width: 75rem;
+  min-height: 50%;
 }
 .section {
   width: 90%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: space-between;
   align-self: center;
 }
 .container {
@@ -29,7 +30,7 @@ main {
   margin: 0 auto;
   display: flex;
   flex-direction: column-reverse;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 2em;
 }
 .slider {
@@ -46,7 +47,7 @@ main {
   display: flex;
 }
 .pic:nth-child(3) img {
-  width: 95%;
+  min-width: 60%;
 }
 img {
   max-width: 100%;
@@ -140,7 +141,8 @@ label {
   .section {
     flex-direction: column;
     align-items: center;
-    gap: 2em;
+    justify-content: space-between;
+    min-height: 6rem;
   }
   .pic {
     max-height: 100%;
