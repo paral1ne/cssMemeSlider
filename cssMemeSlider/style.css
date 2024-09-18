@@ -100,6 +100,10 @@ label {
   border: 0.2em solid #ffa733;
   transform: scale(1.1);
 }
+.wrapper-control:active .control-midified {
+  background: gray;
+  border: 0.2em solid gray;
+}
 @keyframes fadeOut {
   0% {
     opacity: 0;
