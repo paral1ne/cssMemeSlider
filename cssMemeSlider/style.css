@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+h3 {
+  opacity: 0;
+  display: none;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #dcdcdc;
+}
+body {
+  background: #2e3b4e;
+  height: 100vh;
+}
+main {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 75rem;
+}
+.section {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  align-self: center;
+}
+.container {
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  gap: 2em;
+}
+.slider {
+  width: 400%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  transition: 0.2s all linear;
+}
+.pic {
+  width: 100%;
+  max-height: 70vh;
+  display: flex;
+}
+.pic:nth-child(3) img {
+  min-width: 60%;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: fill;
+  margin: 0 auto;
+  border-radius: 3%;
+}
+
+.buttons {
+  gap: 0.5em;
+}
+.section {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.flex-center {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+.control-default {
+  display: none;
+}
+label {
+  display: flex;
+}
+
+.control-midified {
+  display: block;
+  width: 0.7em;
+  height: 0.7em;
+  background: #ff8c00;
+  border: 0.2em solid #ff8c00;
+  border-radius: 50%;
+  transition: 0.2s all linear;
+}
+.wrapper-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2em;
+  height: 3em;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.wrapper-control:hover .control-midified {
+  background: #ffa733;
+  border: 0.2em solid #ffa733;
+  transform: scale(1.1);
+}
+.wrapper-control:active .control-midified {
+  background: gray;
+  border: 0.2em solid gray;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* SESLECROTS HELL */
+
+#b1:checked ~ .section .text1,
+#b2:checked ~ .section .text2,
+#b3:checked ~ .section .text3,
+#b4:checked ~ .section .text4 {
+  display: block;
+  opacity: 1;
+  animation: fadeOut 1s forwards;
+}
+#b1:checked ~ .section #C1,
+#b2:checked ~ .section #C2,
+#b3:checked ~ .section #C3,
+#b4:checked ~ .section #C4 {
+  background: #2e3b4e;
+}
+#b1:checked ~ .slider {
+  transform: translateX(0);
+}
+#b2:checked ~ .slider {
+  transform: translateX(-25%);
+}
+#b3:checked ~ .slider {
+  transform: translateX(-50%);
+}
+#b4:checked ~ .slider {
+  transform: translateX(-75%);
+}
+@media (width <= 600px) {
+  .section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 6rem;
+  }
+  .pic {
+    max-height: 100%;
+  }
+  .meme-text {
+    align-self: start;
+  }
+}
